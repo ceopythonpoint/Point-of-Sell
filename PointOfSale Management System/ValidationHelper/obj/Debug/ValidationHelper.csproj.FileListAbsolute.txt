@@ -1,0 +1,11 @@
+G:\C sharp learning\PointOfSale Management System\ValidationHelper\bin\Debug\ValidationHelper.dll
+G:\C sharp learning\PointOfSale Management System\ValidationHelper\bin\Debug\ValidationHelper.pdb
+G:\C sharp learning\PointOfSale Management System\ValidationHelper\obj\Debug\ValidationHelper.csprojResolveAssemblyReference.cache
+G:\C sharp learning\PointOfSale Management System\ValidationHelper\obj\Debug\ValidationHelper.dll
+G:\C sharp learning\PointOfSale Management System\ValidationHelper\obj\Debug\ValidationHelper.pdb
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\ValidationHelper\bin\Debug\ValidationHelper.dll
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\ValidationHelper\bin\Debug\ValidationHelper.pdb
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\ValidationHelper\obj\Debug\ValidationHelper.csprojAssemblyReference.cache
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\ValidationHelper\obj\Debug\ValidationHelper.csproj.CoreCompileInputs.cache
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\ValidationHelper\obj\Debug\ValidationHelper.dll
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\ValidationHelper\obj\Debug\ValidationHelper.pdb

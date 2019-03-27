@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9388DDB5-93DA-42E1-936E-2E7B38ACE251}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PointOfSale_Management_System</RootNamespace>
+    <AssemblyName>PointOfSale Management System</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin_Dashborad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Dashborad.Designer.cs">
+      <DependentUpon>Admin_Dashborad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClerkAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClerkAdd.Designer.cs">
+      <DependentUpon>ClerkAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClerkDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClerkDelete.Designer.cs">
+      <DependentUpon>ClerkDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClerkTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClerkTemplate.Designer.cs">
+      <DependentUpon>ClerkTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClerkCurd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClerkCurd.Designer.cs">
+      <DependentUpon>ClerkCurd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClerkUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClerkUpdate.Designer.cs">
+      <DependentUpon>ClerkUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerADD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerADD.Designer.cs">
+      <DependentUpon>CustomerADD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerCURD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerCURD.Designer.cs">
+      <DependentUpon>CustomerCURD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Info.Designer.cs">
+      <DependentUpon>Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PointOfSellDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PointOfSellDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin_Dashborad.resx">
+      <DependentUpon>Admin_Dashborad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClerkAdd.resx">
+      <DependentUpon>ClerkAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClerkDelete.resx">
+      <DependentUpon>ClerkDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClerkTemplate.resx">
+      <DependentUpon>ClerkTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClerkCurd.resx">
+      <DependentUpon>ClerkCurd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClerkUpdate.resx">
+      <DependentUpon>ClerkUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerADD.resx">
+      <DependentUpon>CustomerADD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerCURD.resx">
+      <DependentUpon>CustomerCURD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Info.resx">
+      <DependentUpon>Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="PointOfSellDataSet.xsc">
+      <DependentUpon>PointOfSellDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PointOfSellDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PointOfSellDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PointOfSellDataSet.xss">
+      <DependentUpon>PointOfSellDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DATAs\DATAs.csproj">
+      <Project>{80318958-87f5-4220-b85d-8d30d031813e}</Project>
+      <Name>DATAs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ValidationHelper\ValidationHelper.csproj">
+      <Project>{275358bf-2314-4725-ad31-098750fe973f}</Project>
+      <Name>ValidationHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

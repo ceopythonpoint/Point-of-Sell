@@ -1,0 +1,10 @@
+G:\C sharp learning\PointOfSale Management System\DATA\bin\Debug\DATA.dll.config
+G:\C sharp learning\PointOfSale Management System\DATA\bin\Debug\DATA.dll
+G:\C sharp learning\PointOfSale Management System\DATA\bin\Debug\DATA.pdb
+G:\C sharp learning\PointOfSale Management System\DATA\bin\Debug\EntityFramework.dll
+G:\C sharp learning\PointOfSale Management System\DATA\bin\Debug\EntityFramework.SqlServer.dll
+G:\C sharp learning\PointOfSale Management System\DATA\bin\Debug\EntityFramework.xml
+G:\C sharp learning\PointOfSale Management System\DATA\bin\Debug\EntityFramework.SqlServer.xml
+G:\C sharp learning\PointOfSale Management System\DATA\obj\Debug\DATA.csprojResolveAssemblyReference.cache
+G:\C sharp learning\PointOfSale Management System\DATA\obj\Debug\DATA.dll
+G:\C sharp learning\PointOfSale Management System\DATA\obj\Debug\DATA.pdb

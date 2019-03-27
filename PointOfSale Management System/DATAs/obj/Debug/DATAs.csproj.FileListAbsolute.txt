@@ -1,0 +1,22 @@
+F:\PointOfSale Management System\DATAs\bin\Debug\DATAs.dll.config
+F:\PointOfSale Management System\DATAs\bin\Debug\DATAs.dll
+F:\PointOfSale Management System\DATAs\bin\Debug\DATAs.pdb
+F:\PointOfSale Management System\DATAs\bin\Debug\EntityFramework.dll
+F:\PointOfSale Management System\DATAs\bin\Debug\EntityFramework.SqlServer.dll
+F:\PointOfSale Management System\DATAs\bin\Debug\EntityFramework.xml
+F:\PointOfSale Management System\DATAs\bin\Debug\EntityFramework.SqlServer.xml
+F:\PointOfSale Management System\DATAs\obj\Debug\DATAs.csprojResolveAssemblyReference.cache
+F:\PointOfSale Management System\DATAs\obj\Debug\DATAs.dll
+F:\PointOfSale Management System\DATAs\obj\Debug\DATAs.pdb
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\DATAs\bin\Debug\DATAs.dll.config
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\DATAs\bin\Debug\DATAs.dll
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\DATAs\bin\Debug\DATAs.pdb
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\DATAs\bin\Debug\EntityFramework.dll
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\DATAs\bin\Debug\EntityFramework.SqlServer.dll
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\DATAs\bin\Debug\EntityFramework.xml
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\DATAs\bin\Debug\EntityFramework.SqlServer.xml
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\DATAs\obj\Debug\DATAs.csprojAssemblyReference.cache
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\DATAs\obj\Debug\DATAs.csproj.CoreCompileInputs.cache
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\DATAs\obj\Debug\DATAs.csproj.CopyComplete
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\DATAs\obj\Debug\DATAs.dll
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\DATAs\obj\Debug\DATAs.pdb

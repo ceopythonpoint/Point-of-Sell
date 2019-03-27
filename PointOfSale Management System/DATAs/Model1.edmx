@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="abcModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clerk">
+          <Key>
+            <PropertyRef Name="ClerkID" />
+          </Key>
+          <Property Name="ClerkID" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="ClerkName" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Manager" Type="nchar" MaxLength="10" />
+          <Property Name="Address" Type="nchar" MaxLength="10" />
+          <Property Name="Salary" Type="int" Nullable="false" />
+          <Property Name="DeptID" Type="int" Nullable="false" />
+          <Property Name="JoinDate" Type="date" Nullable="false" />
+          <Property Name="Password" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="CustomerName" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="CustomerAddress" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentName" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="ItemNo" />
+          </Key>
+          <Property Name="ItemNo" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="I_Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Buy_price" Type="int" Nullable="false" />
+          <Property Name="Sell_price" Type="int" Nullable="false" />
+          <Property Name="StockUnit" Type="int" Nullable="false" />
+          <Property Name="CategoryID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SaleOrder">
+          <Key>
+            <PropertyRef Name="SaleOrderNo" />
+          </Key>
+          <Property Name="SaleOrderNo" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="SaleDate" Type="datetime" Nullable="false" />
+          <Property Name="CustomerID" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="ClerkID" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SalesOrderDetails">
+          <Key>
+            <PropertyRef Name="SaleOrderNo" />
+            <PropertyRef Name="ItemNo" />
+          </Key>
+          <Property Name="SaleOrderNo" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="ItemNo" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Clerk_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Clerk" Type="Self.Clerk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Clerk">
+              <PropertyRef Name="DeptID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Item_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Item" Type="Self.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Item">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SaleOrder_Clerk">
+          <End Role="Clerk" Type="Self.Clerk" Multiplicity="1" />
+          <End Role="SaleOrder" Type="Self.SaleOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clerk">
+              <PropertyRef Name="ClerkID" />
+            </Principal>
+            <Dependent Role="SaleOrder">
+              <PropertyRef Name="ClerkID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SaleOrder_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="SaleOrder" Type="Self.SaleOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="SaleOrder">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesOrderDetails_Item">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
+          <End Role="SalesOrderDetails" Type="Self.SalesOrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="ItemNo" />
+            </Principal>
+            <Dependent Role="SalesOrderDetails">
+              <PropertyRef Name="ItemNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesOrderDetails_SaleOrder">
+          <End Role="SaleOrder" Type="Self.SaleOrder" Multiplicity="1" />
+          <End Role="SalesOrderDetails" Type="Self.SalesOrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaleOrder">
+              <PropertyRef Name="SaleOrderNo" />
+            </Principal>
+            <Dependent Role="SalesOrderDetails">
+              <PropertyRef Name="SaleOrderNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="abcModelStoreContainer">
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clerk" EntityType="Self.Clerk" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SaleOrder" EntityType="Self.SaleOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SalesOrderDetails" EntityType="Self.SalesOrderDetails" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Clerk_Department" Association="Self.FK_Clerk_Department">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="Clerk" EntitySet="Clerk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Item_Category" Association="Self.FK_Item_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Item" EntitySet="Item" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SaleOrder_Clerk" Association="Self.FK_SaleOrder_Clerk">
+            <End Role="Clerk" EntitySet="Clerk" />
+            <End Role="SaleOrder" EntitySet="SaleOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SaleOrder_Customer" Association="Self.FK_SaleOrder_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="SaleOrder" EntitySet="SaleOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesOrderDetails_Item" Association="Self.FK_SalesOrderDetails_Item">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="SalesOrderDetails" EntitySet="SalesOrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesOrderDetails_SaleOrder" Association="Self.FK_SalesOrderDetails_SaleOrder">
+            <End Role="SaleOrder" EntitySet="SaleOrder" />
+            <End Role="SalesOrderDetails" EntitySet="SalesOrderDetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="abcModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Items" Relationship="Self.FK_Item_Category" FromRole="Category" ToRole="Item" />
+        </EntityType>
+        <EntityType Name="Clerk">
+          <Key>
+            <PropertyRef Name="ClerkID" />
+          </Key>
+          <Property Name="ClerkID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ClerkName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Manager" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Salary" Type="Int32" Nullable="false" />
+          <Property Name="DeptID" Type="Int32" Nullable="false" />
+          <Property Name="JoinDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_Clerk_Department" FromRole="Clerk" ToRole="Department" />
+          <NavigationProperty Name="SaleOrders" Relationship="Self.FK_SaleOrder_Clerk" FromRole="Clerk" ToRole="SaleOrder" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="CustomerAddress" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="SaleOrders" Relationship="Self.FK_SaleOrder_Customer" FromRole="Customer" ToRole="SaleOrder" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Clerks" Relationship="Self.FK_Clerk_Department" FromRole="Department" ToRole="Clerk" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="ItemNo" />
+          </Key>
+          <Property Name="ItemNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="I_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Buy_price" Type="Int32" Nullable="false" />
+          <Property Name="Sell_price" Type="Int32" Nullable="false" />
+          <Property Name="StockUnit" Type="Int32" Nullable="false" />
+          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Item_Category" FromRole="Item" ToRole="Category" />
+          <NavigationProperty Name="SalesOrderDetails" Relationship="Self.FK_SalesOrderDetails_Item" FromRole="Item" ToRole="SalesOrderDetails" />
+        </EntityType>
+        <EntityType Name="SaleOrder">
+          <Key>
+            <PropertyRef Name="SaleOrderNo" />
+          </Key>
+          <Property Name="SaleOrderNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="SaleDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CustomerID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ClerkID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Clerk" Relationship="Self.FK_SaleOrder_Clerk" FromRole="SaleOrder" ToRole="Clerk" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_SaleOrder_Customer" FromRole="SaleOrder" ToRole="Customer" />
+          <NavigationProperty Name="SalesOrderDetails" Relationship="Self.FK_SalesOrderDetails_SaleOrder" FromRole="SaleOrder" ToRole="SalesOrderDetails" />
+        </EntityType>
+        <EntityType Name="SalesOrderDetail">
+          <Key>
+            <PropertyRef Name="SaleOrderNo" />
+            <PropertyRef Name="ItemNo" />
+          </Key>
+          <Property Name="SaleOrderNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ItemNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Item" Relationship="Self.FK_SalesOrderDetails_Item" FromRole="SalesOrderDetails" ToRole="Item" />
+          <NavigationProperty Name="SaleOrder" Relationship="Self.FK_SalesOrderDetails_SaleOrder" FromRole="SalesOrderDetails" ToRole="SaleOrder" />
+        </EntityType>
+        <Association Name="FK_Item_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Item" Type="Self.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Item">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clerk_Department">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Clerk" Type="Self.Clerk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Clerk">
+              <PropertyRef Name="DeptID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SaleOrder_Clerk">
+          <End Role="Clerk" Type="Self.Clerk" Multiplicity="1" />
+          <End Role="SaleOrder" Type="Self.SaleOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clerk">
+              <PropertyRef Name="ClerkID" />
+            </Principal>
+            <Dependent Role="SaleOrder">
+              <PropertyRef Name="ClerkID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SaleOrder_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="SaleOrder" Type="Self.SaleOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="SaleOrder">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesOrderDetails_Item">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
+          <End Role="SalesOrderDetails" Type="Self.SalesOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="ItemNo" />
+            </Principal>
+            <Dependent Role="SalesOrderDetails">
+              <PropertyRef Name="ItemNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesOrderDetails_SaleOrder">
+          <End Role="SaleOrder" Type="Self.SaleOrder" Multiplicity="1" />
+          <End Role="SalesOrderDetails" Type="Self.SalesOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SaleOrder">
+              <PropertyRef Name="SaleOrderNo" />
+            </Principal>
+            <Dependent Role="SalesOrderDetails">
+              <PropertyRef Name="SaleOrderNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PointOfSellEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Clerks" EntityType="Self.Clerk" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Departments" EntityType="Self.Department" />
+          <EntitySet Name="Items" EntityType="Self.Item" />
+          <EntitySet Name="SaleOrders" EntityType="Self.SaleOrder" />
+          <EntitySet Name="SalesOrderDetails" EntityType="Self.SalesOrderDetail" />
+          <AssociationSet Name="FK_Item_Category" Association="Self.FK_Item_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Item" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clerk_Department" Association="Self.FK_Clerk_Department">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Clerk" EntitySet="Clerks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SaleOrder_Clerk" Association="Self.FK_SaleOrder_Clerk">
+            <End Role="Clerk" EntitySet="Clerks" />
+            <End Role="SaleOrder" EntitySet="SaleOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SaleOrder_Customer" Association="Self.FK_SaleOrder_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="SaleOrder" EntitySet="SaleOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesOrderDetails_Item" Association="Self.FK_SalesOrderDetails_Item">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="SalesOrderDetails" EntitySet="SalesOrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesOrderDetails_SaleOrder" Association="Self.FK_SalesOrderDetails_SaleOrder">
+            <End Role="SaleOrder" EntitySet="SaleOrders" />
+            <End Role="SalesOrderDetails" EntitySet="SalesOrderDetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="abcModelStoreContainer" CdmEntityContainer="PointOfSellEntities">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="abcModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clerks">
+            <EntityTypeMapping TypeName="abcModel.Clerk">
+              <MappingFragment StoreEntitySet="Clerk">
+                <ScalarProperty Name="ClerkID" ColumnName="ClerkID" />
+                <ScalarProperty Name="ClerkName" ColumnName="ClerkName" />
+                <ScalarProperty Name="Manager" ColumnName="Manager" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+                <ScalarProperty Name="JoinDate" ColumnName="JoinDate" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="abcModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="abcModel.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="abcModel.Item">
+              <MappingFragment StoreEntitySet="Item">
+                <ScalarProperty Name="ItemNo" ColumnName="ItemNo" />
+                <ScalarProperty Name="I_Description" ColumnName="I_Description" />
+                <ScalarProperty Name="Buy_price" ColumnName="Buy_price" />
+                <ScalarProperty Name="Sell_price" ColumnName="Sell_price" />
+                <ScalarProperty Name="StockUnit" ColumnName="StockUnit" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaleOrders">
+            <EntityTypeMapping TypeName="abcModel.SaleOrder">
+              <MappingFragment StoreEntitySet="SaleOrder">
+                <ScalarProperty Name="SaleOrderNo" ColumnName="SaleOrderNo" />
+                <ScalarProperty Name="SaleDate" ColumnName="SaleDate" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="ClerkID" ColumnName="ClerkID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SalesOrderDetails">
+            <EntityTypeMapping TypeName="abcModel.SalesOrderDetail">
+              <MappingFragment StoreEntitySet="SalesOrderDetails">
+                <ScalarProperty Name="SaleOrderNo" ColumnName="SaleOrderNo" />
+                <ScalarProperty Name="ItemNo" ColumnName="ItemNo" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

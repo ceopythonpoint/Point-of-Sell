@@ -1,0 +1,71 @@
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\bin\Debug\PointOfSale Management System.exe.config
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\bin\Debug\PointOfSale Management System.exe
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\bin\Debug\PointOfSale Management System.pdb
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\bin\Debug\DATA.dll
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\bin\Debug\EntityFramework.dll
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\bin\Debug\EntityFramework.SqlServer.dll
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\bin\Debug\MetroFramework.Design.dll
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\bin\Debug\MetroFramework.dll
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\bin\Debug\MetroFramework.Fonts.dll
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\bin\Debug\DATA.pdb
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\bin\Debug\EntityFramework.xml
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\bin\Debug\EntityFramework.SqlServer.xml
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale Management System.csprojResolveAssemblyReference.cache
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.Properties.Resources.resources
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale Management System.csproj.GenerateResource.Cache
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale Management System.exe
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale Management System.pdb
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.Admin_Dashborad.resources
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.CustomerADD.resources
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.CustomerCURD.resources
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.ClerkCurd.resources
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.ClerkTemplate.resources
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.Info.resources
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.ClerkAdd.resources
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\bin\Debug\ValidationHelper.dll
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\bin\Debug\ValidationHelper.pdb
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.ClerkUpdate.resources
+G:\C sharp learning\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.ClerkDelete.resources
+F:\PointOfSale Management System\PointOfSale Management System\bin\Debug\PointOfSale Management System.exe.config
+F:\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale Management System.exe
+F:\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale Management System.pdb
+F:\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale Management System.csprojResolveAssemblyReference.cache
+F:\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.Admin_Dashborad.resources
+F:\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.ClerkAdd.resources
+F:\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.ClerkDelete.resources
+F:\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.ClerkTemplate.resources
+F:\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.ClerkCurd.resources
+F:\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.ClerkUpdate.resources
+F:\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.CustomerADD.resources
+F:\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.CustomerCURD.resources
+F:\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.Info.resources
+F:\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.Properties.Resources.resources
+F:\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale Management System.csproj.GenerateResource.Cache
+F:\PointOfSale Management System\PointOfSale Management System\bin\Debug\PointOfSale Management System.exe
+F:\PointOfSale Management System\PointOfSale Management System\bin\Debug\PointOfSale Management System.pdb
+F:\PointOfSale Management System\PointOfSale Management System\bin\Debug\DATAs.dll
+F:\PointOfSale Management System\PointOfSale Management System\bin\Debug\EntityFramework.dll
+F:\PointOfSale Management System\PointOfSale Management System\bin\Debug\EntityFramework.SqlServer.dll
+F:\PointOfSale Management System\PointOfSale Management System\bin\Debug\MetroFramework.Design.dll
+F:\PointOfSale Management System\PointOfSale Management System\bin\Debug\MetroFramework.dll
+F:\PointOfSale Management System\PointOfSale Management System\bin\Debug\MetroFramework.Fonts.dll
+F:\PointOfSale Management System\PointOfSale Management System\bin\Debug\ValidationHelper.dll
+F:\PointOfSale Management System\PointOfSale Management System\bin\Debug\DATAs.pdb
+F:\PointOfSale Management System\PointOfSale Management System\bin\Debug\ValidationHelper.pdb
+F:\PointOfSale Management System\PointOfSale Management System\bin\Debug\EntityFramework.xml
+F:\PointOfSale Management System\PointOfSale Management System\bin\Debug\EntityFramework.SqlServer.xml
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale Management System.csprojAssemblyReference.cache
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.Admin_Dashborad.resources
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.ClerkAdd.resources
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.ClerkDelete.resources
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.ClerkTemplate.resources
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.ClerkCurd.resources
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.ClerkUpdate.resources
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.CustomerADD.resources
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.CustomerCURD.resources
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.Info.resources
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale_Management_System.Properties.Resources.resources
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale Management System.csproj.GenerateResource.cache
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale Management System.csproj.CoreCompileInputs.cache
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale Management System.exe
+D:\C# project\PointOfSale Management System-20190327T160238Z-001\PointOfSale Management System\PointOfSale Management System\obj\Debug\PointOfSale Management System.pdb

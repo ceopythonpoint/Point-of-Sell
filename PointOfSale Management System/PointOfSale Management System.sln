@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointOfSale Management System", "PointOfSale Management System\PointOfSale Management System.csproj", "{9388DDB5-93DA-42E1-936E-2E7B38ACE251}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationHelper", "ValidationHelper\ValidationHelper.csproj", "{275358BF-2314-4725-AD31-098750FE973F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DATAs", "DATAs\DATAs.csproj", "{80318958-87F5-4220-B85D-8D30D031813E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9388DDB5-93DA-42E1-936E-2E7B38ACE251}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9388DDB5-93DA-42E1-936E-2E7B38ACE251}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9388DDB5-93DA-42E1-936E-2E7B38ACE251}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9388DDB5-93DA-42E1-936E-2E7B38ACE251}.Release|Any CPU.Build.0 = Release|Any CPU
+		{275358BF-2314-4725-AD31-098750FE973F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{275358BF-2314-4725-AD31-098750FE973F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{275358BF-2314-4725-AD31-098750FE973F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{275358BF-2314-4725-AD31-098750FE973F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80318958-87F5-4220-B85D-8D30D031813E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80318958-87F5-4220-B85D-8D30D031813E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80318958-87F5-4220-B85D-8D30D031813E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80318958-87F5-4220-B85D-8D30D031813E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

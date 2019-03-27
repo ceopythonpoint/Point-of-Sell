@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="abcModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Items" Relationship="Self.FK_Item_Category" FromRole="Category" ToRole="Item" />
+  </EntityType>
+  <EntityType Name="Clerk">
+    <Key>
+      <PropertyRef Name="ClerkID" />
+    </Key>
+    <Property Name="ClerkID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ClerkName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Manager" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Salary" Type="Int32" Nullable="false" />
+    <Property Name="DeptID" Type="Int32" Nullable="false" />
+    <Property Name="JoinDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_Clerk_Department" FromRole="Clerk" ToRole="Department" />
+    <NavigationProperty Name="SaleOrders" Relationship="Self.FK_SaleOrder_Clerk" FromRole="Clerk" ToRole="SaleOrder" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="CustomerAddress" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="SaleOrders" Relationship="Self.FK_SaleOrder_Customer" FromRole="Customer" ToRole="SaleOrder" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Clerks" Relationship="Self.FK_Clerk_Department" FromRole="Department" ToRole="Clerk" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="ItemNo" />
+    </Key>
+    <Property Name="ItemNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="I_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Buy_price" Type="Int32" Nullable="false" />
+    <Property Name="Sell_price" Type="Int32" Nullable="false" />
+    <Property Name="StockUnit" Type="Int32" Nullable="false" />
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_Item_Category" FromRole="Item" ToRole="Category" />
+    <NavigationProperty Name="SalesOrderDetails" Relationship="Self.FK_SalesOrderDetails_Item" FromRole="Item" ToRole="SalesOrderDetails" />
+  </EntityType>
+  <EntityType Name="SaleOrder">
+    <Key>
+      <PropertyRef Name="SaleOrderNo" />
+    </Key>
+    <Property Name="SaleOrderNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="SaleDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CustomerID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ClerkID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Clerk" Relationship="Self.FK_SaleOrder_Clerk" FromRole="SaleOrder" ToRole="Clerk" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_SaleOrder_Customer" FromRole="SaleOrder" ToRole="Customer" />
+    <NavigationProperty Name="SalesOrderDetails" Relationship="Self.FK_SalesOrderDetails_SaleOrder" FromRole="SaleOrder" ToRole="SalesOrderDetails" />
+  </EntityType>
+  <EntityType Name="SalesOrderDetail">
+    <Key>
+      <PropertyRef Name="SaleOrderNo" />
+      <PropertyRef Name="ItemNo" />
+    </Key>
+    <Property Name="SaleOrderNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ItemNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Item" Relationship="Self.FK_SalesOrderDetails_Item" FromRole="SalesOrderDetails" ToRole="Item" />
+    <NavigationProperty Name="SaleOrder" Relationship="Self.FK_SalesOrderDetails_SaleOrder" FromRole="SalesOrderDetails" ToRole="SaleOrder" />
+  </EntityType>
+  <Association Name="FK_Item_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Item" Type="Self.Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Item">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clerk_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="Clerk" Type="Self.Clerk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="Clerk">
+        <PropertyRef Name="DeptID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleOrder_Clerk">
+    <End Role="Clerk" Type="Self.Clerk" Multiplicity="1" />
+    <End Role="SaleOrder" Type="Self.SaleOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clerk">
+        <PropertyRef Name="ClerkID" />
+      </Principal>
+      <Dependent Role="SaleOrder">
+        <PropertyRef Name="ClerkID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleOrder_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="SaleOrder" Type="Self.SaleOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="SaleOrder">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SalesOrderDetails_Item">
+    <End Role="Item" Type="Self.Item" Multiplicity="1" />
+    <End Role="SalesOrderDetails" Type="Self.SalesOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ItemNo" />
+      </Principal>
+      <Dependent Role="SalesOrderDetails">
+        <PropertyRef Name="ItemNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SalesOrderDetails_SaleOrder">
+    <End Role="SaleOrder" Type="Self.SaleOrder" Multiplicity="1" />
+    <End Role="SalesOrderDetails" Type="Self.SalesOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SaleOrder">
+        <PropertyRef Name="SaleOrderNo" />
+      </Principal>
+      <Dependent Role="SalesOrderDetails">
+        <PropertyRef Name="SaleOrderNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PointOfSellEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Clerks" EntityType="Self.Clerk" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="Items" EntityType="Self.Item" />
+    <EntitySet Name="SaleOrders" EntityType="Self.SaleOrder" />
+    <EntitySet Name="SalesOrderDetails" EntityType="Self.SalesOrderDetail" />
+    <AssociationSet Name="FK_Item_Category" Association="Self.FK_Item_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Item" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clerk_Department" Association="Self.FK_Clerk_Department">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Clerk" EntitySet="Clerks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleOrder_Clerk" Association="Self.FK_SaleOrder_Clerk">
+      <End Role="Clerk" EntitySet="Clerks" />
+      <End Role="SaleOrder" EntitySet="SaleOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleOrder_Customer" Association="Self.FK_SaleOrder_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="SaleOrder" EntitySet="SaleOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalesOrderDetails_Item" Association="Self.FK_SalesOrderDetails_Item">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="SalesOrderDetails" EntitySet="SalesOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalesOrderDetails_SaleOrder" Association="Self.FK_SalesOrderDetails_SaleOrder">
+      <End Role="SaleOrder" EntitySet="SaleOrders" />
+      <End Role="SalesOrderDetails" EntitySet="SalesOrderDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
